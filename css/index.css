@@ -344,7 +344,7 @@ body.dark-mode #buttonNav {
     background-color: rgba(50, 50, 50, 0.9);
 }
 
-body.dark-mode #head {
+body.d dark-mode #head {
     color: #ff88c2;
 }
 
@@ -395,4 +395,173 @@ body.dark-mode .timeline-item::before {
         flex-direction: column;
         gap: 10px;
     }
+}
+
+/* 设置面板 */
+#settingsPanel {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    z-index: 1002;
+    transform: translateX(-120%);
+    transition: transform 0.3s ease;
+}
+
+body.dark-mode #settingsPanel {
+    background-color: rgba(50, 50, 50, 0.9);
+    color: #ffffff;
+}
+
+#settingsPanel.show {
+    transform: translateX(0);
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.settings-header h3 {
+    margin: 0;
+}
+
+#closeSettings {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.setting-group {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+body.dark-mode .setting-group {
+    border-bottom-color: #555;
+}
+
+.setting-group h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.setting-group label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.setting-group input[type="range"] {
+    width: 100%;
+}
+
+.setting-group button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+body.dark-mode .setting-group button {
+    background-color: #ff88c2;
+}
+
+/* 主题按钮样式 */
+.theme-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.theme-btn {
+    padding: 8px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.theme-btn.active {
+    background-color: #ff66b2;
+    color: white;
+}
+
+body.dark-mode .theme-btn {
+    background-color: #444;
+    color: #eee;
+}
+
+body.dark-mode .theme-btn.active {
+    background-color: #ff88c2;
+}
+
+#settingsButton {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #ff66b2;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-mode #settingsButton {
+    background-color: #ff88c2;
+}
+
+/* 烟花效果 */
+#fireworksContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.firework {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px 2px #ffffff;
+    z-index: 1000;
+}
+
+.firework-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1000;
+    box-shadow: 0 0 5px 1px currentColor;
+    transition: all 0.5s ease-out;
 }
